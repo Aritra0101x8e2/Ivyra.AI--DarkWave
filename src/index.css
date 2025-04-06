@@ -1,0 +1,112 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 212 70% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 212 70% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 212 70% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 180 92% 45%;
+    --primary-foreground: 210 5% 5%;
+
+    --secondary: 215 70% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 70% 20%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 180 92% 45%;
+    --accent-foreground: 210 5% 5%;
+
+    --destructive: 355 80% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 70% 16%;
+    --input: 215 70% 16%;
+    --ring: 180 92% 45%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 212 70% 10%;
+    --foreground: 210 40% 98%;
+
+    --card: 212 70% 12%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 212 70% 8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 180 92% 45%;
+    --primary-foreground: 210 5% 5%;
+
+    --secondary: 215 70% 15%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 215 70% 20%;
+    --muted-foreground: 217.9 10.6% 64.9%;
+
+    --accent: 180 92% 45%;
+    --accent-foreground: 210 5% 5%;
+
+    --destructive: 355 80% 55%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 215 70% 16%;
+    --input: 215 70% 16%;
+    --ring: 180 92% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-cyber-dark text-foreground;
+  }
+}
+
+@layer components {
+  .cyber-panel {
+    @apply bg-cyber-navy border border-cyber-accent/20 rounded-md 
+           shadow-[0_0_10px_rgba(9,237,240,0.15)] 
+           backdrop-blur-sm;
+  }
+  
+  .cyber-input {
+    @apply bg-cyber-dark border border-cyber-accent/30 rounded
+           focus:border-cyber-accent focus:ring-1 focus:ring-cyber-accent
+           transition-all duration-300;
+  }
+  
+  .cyber-button {
+    @apply bg-cyber-navy border border-cyber-accent/50 rounded
+           hover:bg-cyber-accent/10 hover:border-cyber-accent
+           hover:shadow-[0_0_10px_rgba(9,237,240,0.3)]
+           transition-all duration-300 text-cyber-accent;
+  }
+  
+  .scanning-line {
+    @apply absolute w-full h-2 bg-gradient-to-r from-transparent 
+           via-cyber-accent to-transparent opacity-70;
+  }
+  
+  .status-indicator {
+    @apply inline-block h-2 w-2 rounded-full mr-2;
+  }
+  
+  .grid-bg {
+    @apply bg-cyber-grid bg-[size:30px_30px];
+  }
+}
